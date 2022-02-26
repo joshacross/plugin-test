@@ -28,29 +28,61 @@ write to the Free Software Foundtion, Inc., 51 Franklin Street, Fifth Floor, Bos
 
 defined ( 'ABSPATH ') or die ( 'Hrmm... It does not seem that you have access to this file. Please contact system administrator');
 
-class JcrossPlugin {
+// class JcrossPlugin {
 
-    __construct($string) {
-        echo $string;
+//     __construct($string) {
+//         echo $string;
+//     }
+
+//     function method1() {
+
+//     }
+
+//     function method2() {
+
+//     }
+// }
+
+
+// if ( class_exists( 'JcrossPlugin' ) ) {
+//     $jcrossPlugin = JcrossPlugin( 'Jcross Plugin Initialized' );
+// }
+
+
+// function customFunction ($args) {
+//     echo $arg;
+// }
+
+// customFunction('this is my argument to echo...' );
+
+class JcrossPlugin 
+{
+
+    __construct() {
+        
     }
 
-    function method1() {
+    function method() {
 
     }
 
     function method2() {
 
     }
-}
 
+    // Methods
+    
+}
 
 if ( class_exists( 'JcrossPlugin' ) ) {
-    $jcrossPlugin = JcrossPlugin( 'Jcross Plugin Initialized' );
+    $jcrossPlugin = new JcrossPlugin( 'JcrossPlugin Initialized!');
 }
-
 
 function customFunction ($args) {
-    echo $arg;
+
+    echo $args;
+
 }
 
-customFunction('this is my argument to echo...' );
+customFunction (' this is my argument to echo');
+
