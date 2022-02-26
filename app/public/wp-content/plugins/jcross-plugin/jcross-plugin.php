@@ -6,9 +6,9 @@
 /*
 Plugin Name: Jcross Plugin
 Plugin URI: http://jcross.com/plugin
-Description: This is my first attempt in writing a custom plugin with this amazing tutorial
+Description: This is my first attempt in writing a custom plugin following a tutorial by Alessandro Castellani on YouTube
 Version: 1.0.0
-Author: Joshua "Jcross" Cross
+Author: Joshua Cross
 Author URI: https://joshacross.github.com/my-profile
 License: GPLv2 or later
 Text Domain: jcross-plugin
@@ -32,7 +32,9 @@ class JcrossPlugin
 {
     function activate() {
         // generate a custom post-type (CPT)
+
         // then flush rewrite rules
+
     }
     function dactivate() {
         // flush rewrite rules
@@ -42,6 +44,10 @@ class JcrossPlugin
         // delete CPT
         // delete all the plugin data from the DB
     }   
+
+    function custom_post_type() {
+        register_post_type( 'book', ['public' => 'true']);
+    }
 }
 
 if ( class_exists( 'JcrossPlugin' ) ) {
@@ -58,3 +64,5 @@ register_activation_hook( __FILE__, array( $jcrossPlugin, 'deactivate') );
 
 
 // uninstall
+
+// start https://www.youtube.com/watch?v=XTkbDBhXBQI wordpress plugin - 4
