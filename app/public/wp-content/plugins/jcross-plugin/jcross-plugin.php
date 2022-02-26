@@ -55,34 +55,36 @@ defined ( 'ABSPATH ') or die ( 'Hrmm... It does not seem that you have access to
 
 // customFunction('this is my argument to echo...' );
 
-class JcrossPlugin 
+class JcrossPlugin
 {
+    function activate() {
 
-    __construct() {
-        
+        echo 'the plugin was activated';
+        // generate a custom post-type (CPT)
+        // then flush rewrite rules
     }
+function dactivate() {
+    // flush rewrite rules
 
-    function method() {
 
-    }
-
-    function method2() {
-
-    }
-
-    // Methods
-    
+}
+function uninstall() {
+    // delete CPT
+    // delete all the plugin data from the DB
+}
 }
 
 if ( class_exists( 'JcrossPlugin' ) ) {
     $jcrossPlugin = new JcrossPlugin( 'JcrossPlugin Initialized!');
 }
 
-function customFunction ($args) {
+// activation
+register_activation_hook( __FILE__, array( $jcrossPlugin, 'activate') );
 
-    echo $args;
 
-}
+// deactivation
 
-customFunction (' this is my argument to echo');
+register_activation_hook( __FILE__, array( $jcrossPlugin, 'deactivate') );
 
+
+// uninstall
