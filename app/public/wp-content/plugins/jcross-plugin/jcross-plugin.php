@@ -28,50 +28,20 @@ write to the Free Software Foundtion, Inc., 51 Franklin Street, Fifth Floor, Bos
 
 defined ( 'ABSPATH ') or die ( 'Hrmm... It does not seem that you have access to this file. Please contact system administrator');
 
-// class JcrossPlugin {
-
-//     __construct($string) {
-//         echo $string;
-//     }
-
-//     function method1() {
-
-//     }
-
-//     function method2() {
-
-//     }
-// }
-
-
-// if ( class_exists( 'JcrossPlugin' ) ) {
-//     $jcrossPlugin = JcrossPlugin( 'Jcross Plugin Initialized' );
-// }
-
-
-// function customFunction ($args) {
-//     echo $arg;
-// }
-
-// customFunction('this is my argument to echo...' );
-
 class JcrossPlugin
 {
     function activate() {
-
-        echo 'the plugin was activated';
         // generate a custom post-type (CPT)
         // then flush rewrite rules
     }
-function dactivate() {
-    // flush rewrite rules
+    function dactivate() {
+        // flush rewrite rules
 
-
-}
-function uninstall() {
-    // delete CPT
-    // delete all the plugin data from the DB
-}
+    }
+    function uninstall() {
+        // delete CPT
+        // delete all the plugin data from the DB
+    }   
 }
 
 if ( class_exists( 'JcrossPlugin' ) ) {
