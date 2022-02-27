@@ -5,11 +5,11 @@
 
 /*
 Plugin Name: Jcross Plugin
-Plugin URI: http://jcross.com/plugin
+Plugin URI: https://github.com/joshacross/plugin-test 
 Description: This is my first attempt in writing a custom plugin following a tutorial by Alessandro Castellani on YouTube
 Version: 1.0.0
 Author: Joshua Cross
-Author URI: https://joshacross.github.com/my-profile
+Author URI: https://joshacross.github.io/my-portfolio/ 
 License: GPLv2 or later
 Text Domain: jcross-plugin
  */
@@ -30,11 +30,16 @@ defined ( 'ABSPATH ') or die ( 'Hrmm... It does not seem that you have access to
 
 class JcrossPlugin
 {
+
+    function __construct() {
+        add_action( 'init', array( $this, 'custom_post_type' ) );
+    }
+
     function activate() {
         // generate a custom post-type (CPT)
 
         // then flush rewrite rules
-
+        flush_rewrite_rules();
     }
     function dactivate() {
         // flush rewrite rules
@@ -46,7 +51,7 @@ class JcrossPlugin
     }   
 
     function custom_post_type() {
-        register_post_type( 'book', ['public' => 'true']);
+        register_post_type( 'book', ['public' => true, 'label' => 'Books'] );
     }
 }
 
