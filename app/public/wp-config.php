@@ -63,8 +63,19 @@ define('NONCE_SALT',       'qgsQzUzyy3nRmaAVHGfr439NPyz8fWQ7llEWCf1nfC120LPK1xp8
  */
 $table_prefix = 'wp_';
 
-
-
+/**
+ * For developers: Wordpress debugging mode.
+ * 
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommeded that pluging to theme developers use WP_DEBUG
+ * in their development environments.
+ * 
+ * For information on other constants that can be used for debugging
+ * visit the Codex.
+ * 
+ * @link https://codex.wordpressorg/Debugging_in_WordPress
+ */
+define('WP_DEBUG', true);
 
 /* That's all, stop editing! Happy publishing. */
 
