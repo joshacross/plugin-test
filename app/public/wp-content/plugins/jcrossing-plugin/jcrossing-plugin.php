@@ -32,6 +32,10 @@ if ( ! defined( 'ABSPATH' ) ) {
     die;
 }
 
+if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
+    require_once dirname( __FILE__ ) . '/vendor/composer/autoload_psr4.php';
+}
+
 class JcrossingPlugin 
 {
     public $plugin;
