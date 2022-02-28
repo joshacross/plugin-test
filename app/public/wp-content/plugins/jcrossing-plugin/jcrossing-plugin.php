@@ -38,6 +38,10 @@ class JcrossingPlugin
         add_action( 'init', array ( $this, 'custom_post_type' ) );
     }
 
+    function register() {
+        add_action( 'admin_enqueue_scripts', array ( $this, 'enqueue' ) );
+    }
+
     function activate () {
         // generate a CPT
         $this->custom_post_type();
@@ -50,17 +54,20 @@ class JcrossingPlugin
         flush_rewrite_rules();
     }
 
-    function uninstall () {
-        // delete CPT
-    }
-
     function custom_post_type () {
         register_post_type ( 'book', ['public' => true, 'label' => 'Books']);
+    }
+
+    function enqueue() {
+        // enqueue all our scripts
+        wp_enqueue_style( 'mypluginstyle', plugins_url( '/assets/myrentstyle.css' , __FILE__ ) );
+        wp_enqueue_script( 'mypluginscript', plugins_url( '/assets/rentformula.js' , __FILE__ ) );
     }
 }
 
 if ( class_exists( 'JcrossingPlugin' ) ) {
-$jcrossingPlugin = new JcrossingPlugin();
+    $jcrossingPlugin = new JcrossingPlugin();
+    $jcrossingPlugin->register();
 }
 
 // HOOKS
@@ -69,6 +76,3 @@ register_activation_hook( __FILE__, array( $jcrossingPlugin, 'activate' ) );
 
 // deactivation
 register_deactivation_hook( __FILE__, array( $jcrossingPlugin, 'deactivate' ) );
-
-// uninstall
-register_uninstall_hook( __FILE__, array( $jcrossingPlugin, 'uninstall' ) );

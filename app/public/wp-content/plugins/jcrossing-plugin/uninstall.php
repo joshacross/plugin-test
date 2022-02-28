@@ -17,7 +17,7 @@ if (! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 //     wp_delete_post( $book->ID, true );
 // }
 
-// Access the database via SQL
+// // Access the database via SQL
 global $wpdb; 
 $wpdb->query( "DELETE FROM wp_posts WHERE post_type = 'book'" );
 $wpdb->query( "DELETE FROM wp_postmeta WHERE post_id NOT IN (SELECT id FROM wp_posts)" );
