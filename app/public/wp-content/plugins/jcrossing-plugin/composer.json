@@ -1,0 +1,22 @@
+{
+    "name": "joshuacross/plugin-test",
+    "description": "Awesome Starter plugin example",
+    "type": "project",
+    "license": "GPL",
+    "autoload": {
+        "psr-4": {
+            "Joshuacross\\PluginTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "joshacross",
+            "email": "joshuaalexandercross@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"Inc\\": "./inc"}
+    }
+}
